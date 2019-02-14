@@ -54,7 +54,6 @@ class ViewController: UIViewController, FloatyDelegate {
     floaty.addItem(item: item)
     floaty.paddingX = self.view.frame.width/2 - floaty.frame.width/2
     floaty.fabDelegate = self
-    
     self.view.addSubview(floaty)
     
   }
