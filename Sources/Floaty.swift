@@ -57,6 +57,8 @@ open class Floaty: UIView {
       self.setNeedsDisplay()
     }
   }
+    
+    @objc open var marginBottom:CGFloat = 0.0
   
   /**
    Automatically closes child items when tapped
@@ -767,7 +769,7 @@ open class Floaty: UIView {
     if superview == nil {
       frame = CGRect(
         x: 0,
-        y: (UIScreen.main.bounds.size.height - size - keyboardSize) - paddingY,
+        y: (UIScreen.main.bounds.size.height - size  - keyboardSize) - paddingY,
         width: size,
         height: size
       )
@@ -790,7 +792,7 @@ open class Floaty: UIView {
   fileprivate func setRightBottomFrame(_ keyboardSize: CGFloat = 0) {
     
     var horizontalMargin = size;
-    var verticalMargin = size + keyboardSize;
+    var verticalMargin = size + keyboardSize + marginBottom
     
     if #available(iOS 11, *), relativeToSafeArea, let safeAreaInsets = UIApplication.shared.delegate?.window??.safeAreaInsets {
       horizontalMargin += safeAreaInsets.right
@@ -807,7 +809,7 @@ open class Floaty: UIView {
     } else {
       frame = CGRect(
         x: (superview!.bounds.size.width - horizontalMargin) - paddingX,
-        y: (superview!.bounds.size.height - verticalMargin) - paddingY,
+        y: (superview!.bounds.size.height - verticalMargin) - paddingY ,
         width: size,
         height: size
       )
