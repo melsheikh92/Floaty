@@ -231,7 +231,7 @@ open class FloatyItem: UIView {
     //        tintLayer.frame = CGRectMake(frame.size.width - size, 0, size, size)
     let castParent : Floaty = superview as! Floaty
     tintLayer.frame = CGRect(x: castParent.itemSize/2 - (size/2), y: 0, width: size, height: size)
-    tintLayer.backgroundColor = UIColor.white.withAlphaComponent(0.2).cgColor
+    tintLayer.backgroundColor = UIColor.white.withAlphaComponent(0.7).cgColor
     tintLayer.cornerRadius = size/2
     layer.addSublayer(tintLayer)
   }
