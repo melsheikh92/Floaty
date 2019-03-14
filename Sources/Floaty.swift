@@ -769,14 +769,14 @@ open class Floaty: UIView {
     if superview == nil {
       frame = CGRect(
         x: 0,
-        y: (UIScreen.main.bounds.size.height - size  - keyboardSize - marginBottom ) - paddingY,
+        y: (UIScreen.main.bounds.size.height - size  - keyboardSize ) - paddingY,
         width: size,
         height: size
       )
     } else {
       frame = CGRect(
         x: 0,
-        y: (superview!.bounds.size.height-size-keyboardSize - marginBottom) - paddingY,
+        y: (superview!.bounds.size.height-size-keyboardSize) - paddingY,
         width: size,
         height: size
       )
@@ -792,7 +792,7 @@ open class Floaty: UIView {
   fileprivate func setRightBottomFrame(_ keyboardSize: CGFloat = 0) {
     
     var horizontalMargin = size;
-    var verticalMargin = size + keyboardSize + marginBottom
+    var verticalMargin = size + keyboardSize
     
     if #available(iOS 11, *), relativeToSafeArea, let safeAreaInsets = UIApplication.shared.delegate?.window??.safeAreaInsets {
       horizontalMargin += safeAreaInsets.right
