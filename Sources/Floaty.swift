@@ -769,14 +769,14 @@ open class Floaty: UIView {
     if superview == nil {
       frame = CGRect(
         x: 0,
-        y: (UIScreen.main.bounds.size.height - size  - keyboardSize) - paddingY,
+        y: (UIScreen.main.bounds.size.height - size  - keyboardSize - marginBottom ) - paddingY,
         width: size,
         height: size
       )
     } else {
       frame = CGRect(
         x: 0,
-        y: (superview!.bounds.size.height-size-keyboardSize) - paddingY,
+        y: (superview!.bounds.size.height-size-keyboardSize - marginBottom) - paddingY,
         width: size,
         height: size
       )
